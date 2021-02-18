@@ -40,9 +40,42 @@ h1, h2 {
     font-size: 3em;
 }
 
-.b {
+/* nav */
+
+.nav {
     grid-area: nav;
     background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+
+.nav ul {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav ul li {
+    display: flex;
+    margin: 20px;
+}
+
+.nav ul li button {
+    display: flex;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 10%;
+    padding: 10px;
+}
+
+
+span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 50px;
 }
 
 /* info */
@@ -71,6 +104,7 @@ h1, h2 {
     flex-shrink: 1;
     margin-left: 3em;
     margin-top: 3em;
+    box-shadow: 3px 3px 50px black;
 }
 
 .wrapper-text {
@@ -90,6 +124,7 @@ h1, h2 {
     padding: 10px;
     border-radius: 5%;
     font-size: 1.2em;
+    box-shadow: 3px 3px 50px black;
 }
 
 /* footer */
@@ -122,7 +157,7 @@ h1, h2 {
 
 /* changes for small screen */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 960px) {
 
     .main {
     grid-template-areas: "head"
@@ -154,5 +189,29 @@ h1, h2 {
     .wrapper-text p {
         margin-left: 1em;
         font-size: 1.1em;
+    }
+
+    .nav ul {
+        flex-flow: row;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+
+    span {
+        display: none;
+    }
+    
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 960px){
+    
+    span {
+        display: none;
+    }
+
+    .icon {
+        font-size: 80px;
     }
 }
