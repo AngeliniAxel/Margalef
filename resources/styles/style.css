@@ -1,0 +1,119 @@
+.main {
+    display: grid;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    grid-template-areas: "head head"
+                       "nav info" 
+                       "footer footer";
+    grid-template-rows: 120px 750px 67px;
+    grid-template-columns: 1fr 4fr; 
+}
+
+.header {
+    grid-area: head;
+    background-color: rgb(30, 135, 206);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img {
+    height: 140px;
+}
+
+.header h1 {
+    font-size: 3.5em;
+    text-transform: uppercase;
+    color: black;
+}
+
+.b {
+    grid-area: nav;
+    background-color: whitesmoke;
+}
+
+.info {
+    grid-area: info;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.wrapper-img {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+}
+
+.wrapper-img img {
+    
+    height: auto;
+    width: 400px;
+    border-radius: 5%;
+    flex-shrink: 1;
+}
+
+.wrapper-text {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wrapper-text p {
+    background-color: rgba(2, 49, 39, 0.7);
+    width: 300px;
+    flex-shrink: 1;
+    position: relative;
+    bottom: 50px;
+    color: white;
+    padding: 10px;
+    border-radius: 5%;
+}
+
+.d {
+    grid-area: footer;
+    background-color: rgb(199, 105, 16);
+}
+
+@media only screen and (max-width: 800px) {
+
+    .main {
+    grid-template-areas: "head"
+                       "nav" 
+                       "info"
+                       "footer";
+    grid-template-rows: 120px 70px 750px 67px;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+    }
+
+    .info {
+        background-position-x: -200px;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .wrapper-img {
+        grid-column: 1 / span 1;
+    }
+
+    .wrapper-img img {
+        margin-left: 3em;
+        margin-top: 3em;
+        width: 300px;
+    }
+
+    .wrapper-text {
+        grid-column: 1 / span 1;
+    }
+
+    .wrapper-text p {
+        margin-left: 1em;
+    }
+}
